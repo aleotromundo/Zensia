@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zensia | Bienestar Visible y Simple</title>
+  <meta name="description" content="Zensia es una bebida funcional en polvo con colágeno hidrolizado, acai, camu-camu y prebióticos. Bienestar visible para mujeres. Sin azúcar añadida." />
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Scroll suave -->
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+<style>
+  #benefits .section-title { color: white !important; }
+  #benefits .benefit-card { background: white; padding: 24px; border-radius: 16px; }
+  #benefits .benefit-title,
+  #benefits .benefit-desc,
+  #benefits .benefit-card [data-lucide] {
+    color: black !important;
+  }
+</style>
+<style>
+  .bg-zensia-purple-light {
+    background-color: #8a6ca8;
+    color: white;
+  }
+  .bg-zensia-purple-light h2,
+  .bg-zensia-purple-light .section-title,
+  .bg-zensia-purple-light .benefit-title,
+  .bg-zensia-purple-light .benefit-desc,
+  .bg-zensia-purple-light .usage-title,
+  .bg-zensia-purple-light .usage-step p {
+    color: white;
+  }
+  .bg-zensia-purple-light .benefit-icon-bg,
+  .bg-zensia-purple-light .usage-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  .bg-zensia-purple-light .usage-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+</style>
+<style>
+  #ai-experience .section-title {
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="container flex justify-between items-center">
+      <div class="navbar-logo">ZENSIA</div>
+
+      <!-- Desktop Nav -->
+      <div class="navbar-links-desktop">
+        <button data-scroll="about-aeo" class="navbar-link">Qué es</button>
+        <button data-scroll="benefits" class="navbar-link">Beneficios</button>
+        <button data-scroll="ingredients" class="navbar-link">Ingredientes</button>
+        <button data-scroll="ai-experience" class="navbar-link">Zensia AI</button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-toggle" class="navbar-toggle">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+      <button data-scroll="about-aeo" class="mobile-nav-link">Qué es</button>
+      <button data-scroll="benefits" class="mobile-nav-link">Beneficios</button>
+      <button data-scroll="ingredients" class="mobile-nav-link">Ingredientes</button>
+      <button data-scroll="ai-experience" class="mobile-nav-link">Zensia AI</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-bg">
+        <div class="hero-bg-blur blur-1"></div>
+        <div class="hero-bg-blur blur-2"></div>
+      </div>
+      <div class="container flex flex-col lg:flex-row items-center">
+        <div class="hero-content lg:w-1/2">
+          <h1 class="hero-title">Bienestar visible,<br/> sostenido y simple.</h1>
+          <p class="hero-subtitle">La bebida funcional inteligente para mujeres que buscan equilibrio real.</p>
+          <ul class="hero-list">
+            <li><span class="hero-dot"></span> Soporte de colágeno premium</li>
+            <li><span class="hero-dot"></span> Acción antioxidante natural</li>
+            <li><span class="hero-dot"></span> Sin azúcar añadida</li>
+          </ul>
+          <div class="hero-buttons">
+            <button data-scroll="about-aeo" class="btn-secondary">
+              <i data-lucide="info"></i> Quiero saber más
+            </button>
+          </div>
+        </div>
+        <div class="hero-image lg:w-1/2">
+          <div class="hero-image-glow"></div>
+          <img src="https://picsum.photos/800/800?random=1" alt="Zensia Producto" class="hero-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- About AEO -->
+    <section id="about-aeo" class="section bg-white border-b">
+      <div class="container max-w-4xl text-center">
+        <span class="section-label">Definición</span>
+        <h2 class="section-title">¿Qué es Zensia?</h2>
+        <div class="about-box">
+          <p>Zensia es una bebida funcional en polvo formulada científicamente con colágeno hidrolizado, antioxidantes naturales (Acai y Camu-Camu) y prebióticos. Diseñada para mujeres modernas, apoya la salud de la piel, la respuesta inflamatoria y el bienestar digestivo sin azúcar añadida, ofreciendo un ritual de cuidado simple y efectivo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+	<section id="benefits" class="section bg-zensia-purple">      
+	<div class="container">
+        <h2 class="section-title text-center">Tu cuerpo, en equilibrio</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon-bg"><i data-lucide="sparkles"></i></div>
+            <h3 class="benefit-title">Soporte de Colágeno</h3>
+            <p class="benefit-desc">Péptidos bioactivos que nutren tu piel desde adentro, promoviendo elasticidad e hidratación natural.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon-bg"><i data-lucide="shield"></i></div>
+            <h3 class="benefit-title">Acción Antioxidante</h3>
+            <p class="benefit-desc">Combate el estrés oxidativo diario gracias al poder concentrado del Acai y el Camu-Camu.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon-bg"><i data-lucide="activity"></i></div>
+            <h3 class="benefit-title">Respuesta Inflamatoria</h3>
+            <p class="benefit-desc">Ingredientes adaptógenos como el Ginseng que apoyan el equilibrio natural de tu cuerpo.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon-bg"><i data-lucide="leaf"></i></div>
+            <h3 class="benefit-title">Bienestar Digestivo</h3>
+            <p class="benefit-desc">Enriquecido con Inulina, un prebiótico que alimenta tu flora intestinal saludable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ingredients -->
+    <section id="ingredients" class="section bg-white">
+      <div class="container flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-1/2">
+          <span class="section-label">Ciencia Natural</span>
+          <h2 class="section-title">Ingredientes reales,<br/>propósitos claros.</h2>
+          <div class="ingredients-list">
+            <div class="ingredient-item">
+              <div class="ingredient-bar"></div>
+              <div>
+                <h4 class="ingredient-name">Colágeno Hidrolizado</h4>
+                <p class="ingredient-desc">Proteína estructural descompuesta para máxima absorción. Base esencial para piel y tejidos.</p>
+              </div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-bar"></div>
+              <div>
+                <h4 class="ingredient-name">Acai Berry</h4>
+                <p class="ingredient-desc">Superfruta amazónica cargada de antioxidantes y grasas saludables para vitalidad celular.</p>
+              </div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-bar"></div>
+              <div>
+                <h4 class="ingredient-name">Camu-Camu</h4>
+                <p class="ingredient-desc">La mayor fuente natural de Vitamina C, clave para la síntesis de colágeno y defensa inmune.</p>
+              </div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-bar"></div>
+              <div>
+                <h4 class="ingredient-name">Ginseng</h4>
+                <p class="ingredient-desc">Raíz adaptógena que ayuda al cuerpo a gestionar el estrés físico y mental de forma natural.</p>
+              </div>
+            </div>
+            <div class="ingredient-item">
+              <div class="ingredient-bar"></div>
+              <div>
+                <h4 class="ingredient-name">Inulina</h4>
+                <p class="ingredient-desc">Fibra prebiótica extraída de raíces vegetales que nutre tu microbiota y mejora la digestión.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 relative">
+          <img src="https://picsum.photos/600/800?random=2" alt="Ingredientes Naturales" class="ingredients-img">
+          <div class="ingredients-quote">
+            <p>"Transparencia total en cada etiqueta. Nada escondido."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage -->
+    <section id="usage" class="section bg-zensia-pink-light">
+      <div class="container text-center">
+        <h2 class="section-title">Tu ritual diario, simplificado</h2>
+        <div class="usage-steps">
+          <div class="usage-step">
+            <div class="usage-icon"><i data-lucide="clock"></i></div>
+            <h4 class="usage-title">1. Elige tu momento</h4>
+            <p>Ideal en la mañana para empezar con energía o en la tarde como pausa saludable.</p>
+          </div>
+          <div class="usage-step">
+            <div class="usage-icon"><i data-lucide="droplet"></i></div>
+            <h4 class="usage-title">2. Mezcla</h4>
+            <p>Disuelve un stick en agua fría, jugo natural o tu smoothie favorito.</p>
+          </div>
+          <div class="usage-step">
+            <div class="usage-icon"><i data-lucide="coffee"></i></div>
+            <h4 class="usage-title">3. Disfruta</h4>
+            <p>Agita bien y disfruta de un sabor refrescante sin culpas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ComparisonTable -->
+    <section id="comparison" class="section bg-white">
+      <div class="container max-w-5xl">
+        <h2 class="section-title text-center">¿Por qué elegir Zensia?</h2>
+        <div class="table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Característica</th>
+                <th class="table-zensia">Zensia</th>
+                <th>Bebidas Energéticas</th>
+                <th>Colágeno Tradicional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table-label">Azúcar Añadida</td>
+                <td class="table-zensia-cell">0g (Sin azúcar)</td>
+                <td>Alta</td>
+                <td>Variable</td>
+              </tr>
+              <tr>
+                <td class="table-label">Enfoque Funcional</td>
+                <td class="table-zensia-cell">Holístico (Piel + Digestión)</td>
+                <td>Solo Energía</td>
+                <td>Solo Articulaciones/Piel</td>
+              </tr>
+              <tr>
+                <td class="table-label">Prebióticos</td>
+                <td class="table-zensia-cell"><i data-lucide="check" class="icon-check"></i></td>
+                <td><i data-lucide="x" class="icon-x"></i></td>
+                <td><i data-lucide="x" class="icon-x"></i></td>
+              </tr>
+              <tr>
+                <td class="table-label">Antioxidantes</td>
+                <td class="table-zensia-cell"><i data-lucide="check" class="icon-check"></i></td>
+                <td><i data-lucide="x" class="icon-x"></i></td>
+                <td>Raramente</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- AIExperience -->
+    <section id="ai-experience" class="section ai-section">
+      <div class="container max-w-6xl">
+        <div class="ai-header text-center">
+          <div class="ai-badge">
+            <i data-lucide="sparkles" class="ai-sparkle"></i>
+            <span>Zensia Intelligence</span>
+          </div>
+          <h2 class="section-title">Experiencia Digital IA</h2>
+          <p class="ai-subtitle">Usa nuestra inteligencia artificial para resolver dudas nutricionales o crear visualizaciones inspiradoras para tu rutina de bienestar.</p>
+        </div>
+
+        <div class="ai-container">
+          <!-- Sidebar -->
+          <div class="ai-sidebar">
+            <button id="ai-tab-chat" class="ai-tab active" data-tab="chat">
+              <i data-lucide="message-circle"></i>
+              <div>
+                <div class="ai-tab-title">Experto Zensia</div>
+                <div class="ai-tab-desc">Consultas nutricionales</div>
+              </div>
+            </button>
+            <button id="ai-tab-visualize" class="ai-tab" data-tab="visualize">
+              <i data-lucide="image"></i>
+              <div>
+                <div class="ai-tab-title">Visualizador</div>
+                <div class="ai-tab-desc">Crea tu atmósfera</div>
+              </div>
+            </button>
+          </div>
+
+          <!-- Content -->
+          <div class="ai-content">
+            <!-- Chat Tab -->
+            <div id="ai-chat" class="ai-tab-content active">
+              <div class="ai-chat-messages" id="ai-chat-messages">
+                <div class="ai-message ai-message-model">
+                  Hola, soy tu asistente Zensia. ¿Tienes dudas sobre ingredientes o cómo tomarlo?
+                </div>
+              </div>
+              <form id="ai-chat-form" class="ai-chat-form">
+                <input type="text" id="ai-chat-input" placeholder="Pregunta sobre ingredientes, beneficios...">
+                <button type="submit" id="ai-chat-send"><i data-lucide="send"></i></button>
+              </form>
+            </div>
+
+            <!-- Visualize Tab -->
+            <div id="ai-visualize" class="ai-tab-content">
+              <div class="ai-visualize-form">
+                <h3 class="ai-visualize-title">Visualiza tu Bienestar</h3>
+                <p class="ai-visualize-desc">Describe un escenario de paz, energía o rutina ideal.</p>
+                <div class="ai-visualize-options">
+                  <div>
+                    <label>Formato</label>
+                    <select id="ai-ratio">
+                      <option value="1:1">Cuadrado</option>
+                      <option value="16:9">Horizontal</option>
+                      <option value="9:16">Vertical</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Calidad</label>
+                    <select id="ai-size">
+                      <option value="1024x1024">Alta</option>
+                    </select>
+                  </div>
+                </div>
+                <form id="ai-image-form" class="ai-image-form">
+                  <input type="text" id="ai-prompt" placeholder="Ej: Una mujer practicando yoga al amanecer en una terraza minimalista...">
+                  <button type="submit" id="ai-generate"><i data-lucide="sparkles"></i> Generar</button>
+                </form>
+              </div>
+              <div class="ai-visualize-preview" id="ai-preview">
+                <div class="ai-preview-placeholder">
+                  <i data-lucide="image" class="ai-preview-icon"></i>
+                  <p>Tu imagen aparecerá aquí</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section id="trust" class="section bg-white border-t">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <i data-lucide="file-check" class="trust-icon"></i>
+            <h4 class="trust-title">Registro Sanitario INVIMA</h4>
+            <p class="trust-desc">Cumplimos con toda la normativa colombiana vigente.</p>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="heart" class="trust-icon"></i>
+            <h4 class="trust-title">100% Hecho en Colombia</h4>
+            <p class="trust-desc">Apoyamos la industria local y agricultores responsables.</p>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="map-pin" class="trust-icon"></i>
+            <h4 class="trust-title">Transparencia Total</h4>
+            <p class="trust-desc">Sede física en Bogotá. Atención real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section bg-zensia-purple">
+      <div class="container">
+        <h2 class="section-title text-center">Ellas confían en Zensia</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <i data-lucide="quote" class="testimonial-quote"></i>
+            <p class="testimonial-text">"Más que un suplemento, se volvió mi momento de calma en la mañana. Mi piel se siente diferente, pero lo que más amo es la rutina."</p>
+            <div class="testimonial-author">Ana María, 32 años</div>
+            <div class="testimonial-role">Arquitecta</div>
+          </div>
+          <div class="testimonial-card">
+            <i data-lucide="quote" class="testimonial-quote"></i>
+            <p class="testimonial-text">"Buscaba algo sin azúcar que no supiera a remedio. Zensia es delicioso y siento que me desinflama después de almuerzo."</p>
+            <div class="testimonial-author">Carla, 28 años</div>
+            <div class="testimonial-role">Diseñadora Gráfica</div>
+          </div>
+          <div class="testimonial-card">
+            <i data-lucide="quote" class="testimonial-quote"></i>
+            <p class="testimonial-text">"La digestión siempre fue mi tema. Desde que uso Zensia siento mi estómago más ligero y mi energía más estable."</p>
+            <div class="testimonial-author">Patricia, 45 años</div>
+            <div class="testimonial-role">Emprendedora</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section bg-zensia-light">
+      <div class="container max-w-4xl">
+        <h2 class="section-title text-center">Preguntas Frecuentes</h2>
+        <div class="faq-list" id="faq-list">
+          <!-- FAQ items will be injected by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer bg-zensia-purple">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Zensia</h3>
+          <p>Nutrición funcional inteligente para la mujer de hoy. Bienestar que se ve y se siente.</p>
+        </div>
+        <div class="footer-contact">
+          <h4>Contacto</h4>
+          <ul>
+            <li><i data-lucide="phone"></i> +57 300 123 4567</li>
+            <li>hola@zensia.com</li>
+            <li>Bogotá, Colombia</li>
+          </ul>
+        </div>
+        <div class="footer-legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Política de Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="facebook"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>*Este producto no sirve para el tratamiento, cura o prevención de ninguna enfermedad y no suple una alimentación equilibrada. Los testimonios reflejan experiencias individuales. Consulta a tu médico.</p>
+        <p>© <span id="current-year"></span> Zensia Colombia. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>lucide.createIcons();</script>
+<!-- Partículas doradas flotantes -->
+<div id="golden-particles"></div>
+<style>
+  #golden-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .particle {
+    position: absolute;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(255,215,0,0.8), rgba(218,165,32,0.4));
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 12s infinite ease-in;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) translateX(0) scale(0.5);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(calc(var(--dx) * 10px)) scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+<script>
+  (function() {
+    const container = document.getElementById('golden-particles');
+    const particleCount = 25; // ajusta para más o menos partículas
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      
+      // Tamaño aleatorio (4px a 12px)
+      const size = 4 + Math.random() * 8;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      
+      // Posición horizontal aleatoria
+      const leftPos = Math.random() * 100;
+      particle.style.left = `${leftPos}%`;
+      
+      // Desplazamiento horizontal suave durante la animación
+      const dx = (Math.random() - 0.5) * 2; // entre -1 y 1
+      particle.style.setProperty('--dx', dx);
+      
+      // Retraso y duración aleatorios para naturalidad
+      const delay = Math.random() * 12;
+      const duration = 10 + Math.random() * 8;
+      particle.style.animationDelay = `${delay}s`;
+      particle.style.animationDuration = `${duration}s`;
+      
+      container.appendChild(particle);
+    }
+  })();
+</script>
+</body>
+</html>
