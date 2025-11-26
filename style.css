@@ -1303,6 +1303,17 @@ button {
   color: #a0aec0;
   margin-bottom: 0.5rem;
 }
+.bg-zensia-purple {
+  background-color: #5a3a7a; /* o tu color real */
+  color: white;
+}
+.bg-zensia-purple h2,
+.bg-zensia-purple h3,
+.bg-zensia-purple h4,
+.bg-zensia-purple p,
+.bg-zensia-purple li {
+  color: white;
+}
 
 /* === RESPONSIVE === */
 @media (min-width: 768px) {
