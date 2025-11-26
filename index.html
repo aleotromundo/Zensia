@@ -1,575 +1,317 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zensia | Bienestar Diario</title>
   <meta name="description" content="Zensia es una bebida funcional en polvo para tu bienestar diario. Ingredientes naturales como colágeno, açaí y camu camu." />
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zensia: {
+              purple: '#6D2561',
+              pink: '#F6D8E7',
+              pinkDark: '#E5BCD3',
+              white: '#FFFFFF',
+              black: '#000000',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --purple: #6D2561;
-      --pink: #F6D8E7;
-      --pink-dark: #E5BCD3;
-      --black: #000000;
-      --white: #FFFFFF;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Scroll personalizado */
     ::-webkit-scrollbar {
       width: 10px;
     }
     ::-webkit-scrollbar-track {
-      background: var(--pink);
+      background: #F6D8E7;
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--purple);
+      background: #6D2561;
       border-radius: 5px;
     }
-
-    /* CORRECCIÓN CLAVE: espacio para anclajes */
-    section {
-      padding: 6rem 0;
-      scroll-margin-top: 80px; /* evita que el header tape el contenido */
-    }
-
-    /* Header */
-    #header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      padding: 1rem 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: var(--purple);
-    }
-
-    .nav-links {
-      display: none;
-      gap: 1.5rem;
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      color: var(--black);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--purple);
-    }
-
-    .mobile-menu-button {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--purple);
-      cursor: pointer;
-    }
-
-    #mobile-menu {
-      display: none;
-      background: white;
-      border-top: 1px solid #eee;
-      padding: 1rem 0;
-    }
-
-    .mobile-menu-links a {
-      display: block;
-      padding: 0.8rem 0;
-      text-align: center;
-      font-weight: 600;
-      color: var(--black);
-      transition: color 0.2s;
-    }
-    .mobile-menu-links a:hover {
-      color: var(--purple);
-      background: var(--pink);
-    }
-
-    /* Hero */
-    #inicio {
-      height: 100vh;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding-top: 5rem;
-    }
-
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.3;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(246,216,231,0.4));
-    }
-
-    .hero-content {
-      text-align: center;
-      max-width: 800px;
-      z-index: 2;
-    }
-
-    .hero-content h1 {
-      font-size: 2.5rem;
-      color: var(--purple);
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .hero-content h1 span {
-      color: var(--black);
-      font-weight: 300;
-      font-style: italic;
-    }
-
-    .hero-content p {
-      font-size: 1.125rem;
-      color: #444;
-      margin-bottom: 2rem;
-    }
-
-    .hero-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
-      background: var(--purple);
-      color: white;
-      font-weight: 600;
-      border-radius: 50px;
-      box-shadow: 0 4px 12px rgba(109,37,97,0.3);
-      transition: all 0.3s;
-    }
-
-    .hero-btn:hover {
+    ::-webkit-scrollbar-thumb:hover {
       background: #501b47;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(109,37,97,0.4);
     }
-
-    /* About - SIN opacity */
-    #que-es {
-      background-color: var(--pink); /* no transparencia */
+    .transition-all {
+      transition: all 0.3s ease-in-out;
     }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      align-items: center;
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
     }
-
-    .about-content h2 {
-      font-size: 2.25rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .about-list {
-      list-style: none;
-    }
-
-    .about-list li {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      color: #333;
-    }
-
-    .about-list svg {
-      color: var(--purple);
-      flex-shrink: 0;
-      margin-top: 0.2rem;
-    }
-
-    .about-image img {
-      width: 100%;
-      max-width: 500px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    /* Story */
-    .story-section {
-      text-align: center;
-      padding: 4rem 0;
-    }
-
-    .story-section h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: var(--purple);
-    }
-
-    /* FAQ */
-    #faq {
-      background: #fafafa;
-    }
-
-    .faq-header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .faq-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-bottom: 1rem;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      padding: 1.25rem 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      background: none;
-      border: none;
-      text-align: left;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--black);
-    }
-
-    .faq-question:hover {
-      color: var(--purple);
-    }
-
-    .faq-answer {
-      padding: 0 1.5rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .faq-answer.show {
-      padding: 0 1.5rem 1.5rem;
-      max-height: 500px;
-    }
-
-    /* Contacto */
-    #contacto {
-      background: white;
-    }
-
-    .contact-box {
-      background: var(--pink); /* fondo sólido, no transparente */
-      border-radius: 1.5rem;
-      padding: 2.5rem;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.8rem 2rem;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .contact-btn.phone {
-      background: white;
-      color: var(--purple);
-      border: 2px solid var(--purple);
-    }
-    .contact-btn.phone:hover {
-      background: var(--purple);
-      color: white;
-    }
-
-    .contact-btn.whatsapp {
-      background: #25D366;
-      color: white;
-    }
-    .contact-btn.whatsapp:hover {
-      background: #1fa952;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 3rem 0 2rem;
-      border-top: 1px solid #333;
-    }
-
-    .footer-logo h2 {
-      color: var(--pink);
-    }
-
-    .footer-nav a {
-      color: #aaa;
-    }
-    .footer-nav a:hover {
-      color: var(--pink);
-    }
-
-    .legal-notice {
-      margin-top: 2rem;
-      padding: 0.75rem;
-      border: 1px solid #333;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      color: #999;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Responsive */
-    @media (min-width: 768px) {
-      .nav-links {
-        display: flex;
-      }
-      .mobile-menu-button {
-        display: none;
-      }
-      #mobile-menu {
-        display: none !important;
-      }
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .hero-content h1 {
-        font-size: 3.5rem;
-      }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
-<body>
+<body class="bg-white text-zensia-black antialiased">
+  
   <!-- Header -->
-  <header id="header">
-    <div class="container header-content">
-      <a href="#inicio" class="logo">Zensia</a>
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#que-es">Qué es Zensia</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-      <button class="mobile-menu-button" id="mobile-menu-button">☰</button>
-    </div>
-    <div id="mobile-menu">
-      <div class="container">
-        <div class="mobile-menu-links">
-          <a href="#inicio">Inicio</a>
-          <a href="#que-es">Qué es Zensia</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contacto">Contacto</a>
+  <header id="header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#inicio" class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">
+            Zensia
+          </a>
         </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#inicio" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Inicio</a>
+          <a href="#que-es" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Qué es Zensia</a>
+          <a href="#ingredientes" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Ingredientes</a>
+          <a href="#preparacion" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Preparación</a>
+          <a href="#beneficios" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Beneficios</a>
+          <a href="#faq" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">FAQ</a>
+          <a href="#contacto" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Contacto</a>
+        </nav>
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-zensia-purple hover:text-zensia-black focus:outline-none" aria-label="Abrir menú">
+            <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="close-icon" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 absolute w-full hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+        <a href="#inicio" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Inicio</a>
+        <a href="#que-es" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Qué es Zensia</a>
+        <a href="#ingredientes" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Ingredientes</a>
+        <a href="#preparacion" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Preparación</a>
+        <a href="#beneficios" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Beneficios</a>
+        <a href="#faq" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">FAQ</a>
+        <a href="#contacto" class="mobile-link block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Contacto</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="inicio">
-      <div class="hero-bg">
-        <img src="https://picsum.photos/seed/zensiahero/1920/1080?grayscale" alt="Bienestar">
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <section id="inicio" class="relative w-full h-screen min-h-[600px] flex items-center justify-center pt-20 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/seed/zensiahero/1920/1080?grayscale&blur=2" alt="Mujer feliz disfrutando de bienestar" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-zensia-pink/30 mix-blend-multiply"></div>
       </div>
-      <div class="container hero-content">
-        <h1>Tu ritual de bienestar, <br><span>simplificado.</span></h1>
-        <p>Nutrición funcional en polvo diseñada para la mujer moderna. Energía, belleza y equilibrio en un solo paso.</p>
-        <a href="#que-es" class="hero-btn">Conoce Zensia →</a>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
+        <h1 class="font-serif text-5xl md:text-7xl font-bold text-zensia-purple mb-6 leading-tight">
+          Tu ritual de bienestar, <br />
+          <span class="text-black italic font-light">simplificado.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-10 max-w-2xl font-light">
+          Nutrición funcional en polvo diseñada para la mujer moderna. 
+          Energía, belleza y equilibrio en un solo paso.
+        </p>
+        <a href="#que-es" class="group inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-zensia-purple hover:bg-[#501b47] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          Conoce Zensia
+          <svg class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
       </div>
     </section>
 
-    <section id="que-es">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-content">
-            <span style="font-size:0.875rem;font-weight:700;text-transform:uppercase;color:var(--purple);letter-spacing:0.1em;">Definición</span>
-            <h2>¿Qué es Zensia?</h2>
-            <p>Zensia es una bebida funcional en polvo formulada con ingredientes naturales, diseñada para integrar bienestar, nutrición y equilibrio en la rutina diaria de la mujer moderna, sin azúcares añadidos ni complicaciones.</p>
-            <ul class="about-list">
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                Mezcla exclusiva de superalimentos.
+    <!-- About Section -->
+    <section id="que-es" class="py-20 bg-zensia-pink/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <span class="text-sm font-bold text-zensia-purple uppercase tracking-widest mb-2 block">Definición</span>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-zensia-black mb-6">
+              ¿Qué es Zensia?
+            </h2>
+            <p class="text-lg text-gray-800 leading-relaxed mb-6">
+              Zensia es una bebida funcional en polvo formulada con ingredientes naturales, diseñada para integrar bienestar, nutrición y equilibrio en la rutina diaria de la mujer moderna, sin azúcares añadidos ni complicaciones.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-zensia-purple mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-gray-700">Mezcla exclusiva de superalimentos y adaptógenos.</span>
               </li>
-              <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                Fácil disolución.
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-zensia-purple mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-gray-700">Fácil disolución para un consumo práctico.</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="h-6 w-6 text-zensia-purple mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-gray-700">Enfoque integral: piel, energía y digestión.</span>
               </li>
             </ul>
           </div>
-          <div class="about-image">
-            <img src="https://picsum.photos/seed/zensia/500/400" alt="Zensia">
+          <div class="order-1 md:order-2 flex justify-center">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-zensia-purple/10 rounded-full blur-2xl"></div>
+              <img src="https://picsum.photos/seed/zensiawellness/500/500" alt="Bienestar y equilibrio natural" class="relative rounded-2xl shadow-xl w-full max-w-md object-cover h-[400px]" />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="story-section">
-      <div class="container">
-        <h3>Nuestra razón de ser</h3>
-        <p>Creemos que el bienestar no debería ser una tarea más en tu lista. Zensia nació observando a mujeres reales: activas, soñadoras y ocupadas.</p>
-      </div>
-    </section>
-
-    <section id="faq">
-      <div class="container">
-        <div class="faq-header">
-          <h2>Preguntas Frecuentes</h2>
+    <!-- Storytelling Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="flex justify-center mb-6">
+          <svg class="h-10 w-10 text-zensia-purple" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
         </div>
-        <div id="faq-list"></div>
+        <h3 class="font-serif text-3xl md:text-4xl font-medium text-zensia-black mb-8">
+          Nuestra razón de ser
+        </h3>
+        <p class="text-xl text-gray-600 leading-loose font-light">
+          Creemos que el bienestar no debería ser una tarea más en tu lista de pendientes. 
+          Zensia nació observando a mujeres reales: activas, soñadoras y ocupadas, que buscan cuidarse 
+          sin protocolos complejos. Creamos una fórmula honesta que te acompaña, te nutre y celebra tu 
+          ritmo de vida, simplificando lo mejor de la naturaleza en un gesto diario de amor propio.
+        </p>
+        <div class="mt-8 flex justify-center">
+          <svg class="h-8 w-8 text-zensia-pinkDark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <div class="container">
-        <div class="contact-box">
-          <h2>Estamos aquí para ti</h2>
-          <div style="margin:1.5rem 0;">
-            <a href="tel:3223769698" class="contact-btn phone">Llamar</a>
-            <a href="https://wa.me/573223769698" target="_blank" class="contact-btn whatsapp">WhatsApp</a>
+    <!-- Ingredients Section -->
+    <section id="ingredientes" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-sm font-bold text-zensia-purple uppercase tracking-widest">Lo que nos hace únicos</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold text-zensia-black mt-2">
+            Ingredientes con propósito
+          </h2>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Cada componente de Zensia ha sido seleccionado por su funcionalidad y pureza.
+            Navega por nuestros ingredientes principales.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mb-16">
+          <a href="#colageno" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Colágeno Hidrolizado</a>
+          <a href="#acai" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Açaí Liofilizado</a>
+          <a href="#camucamu" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Camu Camu Liofilizado</a>
+          <a href="#curcuma" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Cúrcuma</a>
+          <a href="#ginseng" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Ginseng</a>
+          <a href="#inulina" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Inulina</a>
+          <a href="#stevia" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Stevia</a>
+        </div>
+
+        <div class="space-y-24">
+          <!-- Colágeno -->
+          <div id="colageno" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
+            <div class="w-full md:w-1/2">
+              <img src="https://picsum.photos/seed/collagen/400/300" alt="Colágeno Hidrolizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-zensia-pink/40 rounded-full">
+                  <svg class="w-5 h-5 text-zensia-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-zensia-purple">Colágeno Hidrolizado</h3>
+              </div>
+              <p class="text-lg font-medium text-gray-900">Proteína esencial fragmentada en pequeñas partículas para una absorción óptima por el cuerpo.</p>
+              <div class="bg-white p-6 rounded-xl border border-zensia-pink/30 shadow-sm">
+                <p class="text-zensia-purple font-bold mb-2">Beneficio funcional:</p>
+                <p class="text-gray-700">Soporte estructural para la elasticidad de la piel y tejidos.</p>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Favorece la hidratación cutánea.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Contribuye al mantenimiento de tejidos conectivos.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Fácil digestión y asimilación.</li>
+              </ul>
+              <div class="pt-4 border-t border-gray-200">
+                <p class="text-sm text-gray-500 italic"><span class="font-semibold text-gray-700">¿Por qué es importante?</span> A partir de los 25 años, la producción natural de colágeno disminuye; este aporte complementa tu nutrición diaria.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <div style="display:flex;flex-direction:column;gap:1.5rem;text-align:center;margin-bottom:2rem;">
-        <div><h2 style="color:var(--pink);font-size:2rem;">Zensia</h2></div>
-        <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;">
-          <a href="#inicio">Inicio</a>
-          <a href="#que-es">Qué es Zensia</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-      <p style="text-align:center;color:#888;">© <span id="current-year"></span> Zensia</p>
-    </div>
-  </footer>
+          <!-- Açaí -->
+          <div id="acai" class="flex flex-col md:flex-row-reverse gap-12 items-center scroll-mt-28">
+            <div class="w-full md:w-1/2">
+              <img src="https://picsum.photos/seed/acai/400/300" alt="Açaí Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-zensia-pink/40 rounded-full">
+                  <svg class="w-5 h-5 text-zensia-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-zensia-purple">Açaí Liofilizado</h3>
+              </div>
+              <p class="text-lg font-medium text-gray-900">Fruto amazónico procesado en frío para conservar sus propiedades intactas.</p>
+              <div class="bg-white p-6 rounded-xl border border-zensia-pink/30 shadow-sm">
+                <p class="text-zensia-purple font-bold mb-2">Beneficio funcional:</p>
+                <p class="text-gray-700">Potente acción antioxidante natural frente a radicales libres.</p>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Rico en antocianinas.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Aporta fibra dietética.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Fuente natural de energía sin picos de azúcar.</li>
+              </ul>
+              <div class="pt-4 border-t border-gray-200">
+                <p class="text-sm text-gray-500 italic"><span class="font-semibold text-gray-700">¿Por qué es importante?</span> El estrés oxidativo diario requiere aliados naturales que ayuden a proteger tus células.</p>
+              </div>
+            </div>
+          </div>
 
-  <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+          <!-- Camu Camu -->
+          <div id="camucamu" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
+            <div class="w-full md:w-1/2">
+              <img src="https://picsum.photos/seed/camu/400/300" alt="Camu Camu Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+              <div class="flex items-center gap-3">
+                <div class="p-2 bg-zensia-pink/40 rounded-full">
+                  <svg class="w-5 h-5 text-zensia-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-zensia-purple">Camu Camu Liofilizado</h3>
+              </div>
+              <p class="text-lg font-medium text-gray-900">Superfruta de la selva con una de las concentraciones más altas de vitamina C natural.</p>
+              <div class="bg-white p-6 rounded-xl border border-zensia-pink/30 shadow-sm">
+                <p class="text-zensia-purple font-bold mb-2">Beneficio funcional:</p>
+                <p class="text-gray-700">Refuerzo natural para el sistema inmune y la vitalidad.</p>
+              </div>
+              <ul class="space-y-2">
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Contenido excepcional de Vitamina C.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Apoya la síntesis natural de colágeno.</li>
+                <li class="flex items-start text-gray-600"><span class="w-2 h-2 bg-zensia-pinkDark rounded-full mt-2 mr-3"></span>Propiedades antioxidantes superiores.</li>
+              </ul>
+              <div class="pt-4 border-t border-gray-200">
+                <p class="text-sm text-gray-500 italic"><span class="font-semibold text-gray-700">¿Por qué es importante?</span> La vitamina C es crucial para que el cuerpo pueda absorber y utilizar el colágeno correctamente.</p>
+              </div>
+            </div>
+          </div>
 
-    // Menú móvil
-    const btn = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-      btn.onclick = () => {
-        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-      };
-      menu.querySelectorAll('a').forEach(a => {
-        a.onclick = () => menu.style.display = 'none';
-      });
-    }
-
-    // FAQ
-    const faqs = [
-      { q: "¿Qué contiene Zensia?", a: "Colágeno, açaí, camu camu, cúrcuma, ginseng, inulina y stevia." },
-      { q: "¿Tiene azúcar?", a: "No, está endulzado solo con stevia." },
-      { q: "¿Cómo se toma?", a: "Disuelve 1 stick en agua o smoothie." }
-    ];
-
-    const list = document.getElementById('faq-list');
-    list.innerHTML = faqs.map(f => `
-      <div class="faq-item">
-        <button class="faq-question">${f.q}<span>▼</span></button>
-        <div class="faq-answer">${f.a}</div>
-      </div>
-    `).join('');
-
-    list.onclick = e => {
-      if (e.target.classList.contains('faq-question')) {
-        const answer = e.target.nextElementSibling;
-        const wasOpen = answer.classList.contains('show');
-        document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('show'));
-        if (!wasOpen) answer.classList.add('show');
-      }
-    };
-
-    // Scroll suave + ajuste para header fijo
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.onclick = e => {
-        e.preventDefault();
-        const id = a.getAttribute('href');
-        if (id === '#') return;
-        const target = document.querySelector(id);
-        if (target) {
-          const top = target.offsetTop - 80;
-          window.scrollTo({ top, behavior: 'smooth' });
-          if (menu.style.display === 'block') menu.style.display = 'none';
-        }
-      };
-    });
-  </script>
-</body>
-</html>
+          <!-- Cúrcuma -->
+          <div id="curcuma" class="flex flex-col md:flex-row-reverse gap-12 items-center scroll-mt-28">
+            <div class="w-full md:w-1/2">
+              <img src="https://picsum.photos/seed/turmeric/400/300" alt="Cúrcuma" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500" />
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+              <div class="flex items-center gap-3">
+                <d
