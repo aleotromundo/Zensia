@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zensia es una bebida funcional en polvo con colágeno hidrolizado, acai, camu-camu y prebiótico. Soporte de colágeno, acción antioxidante y bienestar diario sin azúcar añadida.">
+    <title>Zensia - Bebida Funcional con Colágeno y Antioxidantes</title>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Zensia",
+      "description": "Bebida funcional en polvo con colágeno hidrolizado, acai, camu-camu, ginseng e inulina",
+      "brand": {
+        "@type": "Brand",
+        "name": "Zensia"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "COP"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué beneficios tiene Zensia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zensia ofrece soporte de colágeno para la piel, acción antioxidante gracias al acai y camu-camu, apoyo a la respuesta inflamatoria natural del cuerpo, y prebiótico para el bienestar digestivo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Zensia tiene azúcar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, Zensia está libre de azúcar añadida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué contiene Zensia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zensia contiene colágeno hidrolizado, acai, camu-camu, ginseng e inulina como prebiótico."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --morado-zensia: #6D2561;
+            --rosado-suave: #F6D8E7;
+            --blanco: #FFFFFF;
+            --negro: #000000;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--negro);
+            background: var(--blanco);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--morado-zensia) 0%, #8B3577 100%);
+            color: var(--blanco);
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .benefits-list li {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--blanco);
+            color: var(--morado-zensia);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--blanco);
+            border: 2px solid var(--blanco);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--blanco);
+            color: var(--morado-zensia);
+        }
+        
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+        
+        .section-alt {
+            background: var(--rosado-suave);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--morado-zensia);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        /* AEO Answer Box */
+        .aeo-answer {
+            background: var(--blanco);
+            border-left: 5px solid var(--morado-zensia);
+            padding: 30px;
+            margin: 0 auto 40px;
+            max-width: 900px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        
+        .aeo-answer p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .benefit-card {
+            background: var(--blanco);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(109, 37, 97, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-card h3 {
+            color: var(--morado-zensia);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        /* Ingredients */
+        .ingredients-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .ingredient-item {
+            background: var(--blanco);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+        
+        .ingredient-item h3 {
+            color: var(--morado-zensia);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* How to Use */
+        .usage-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+        
+        .usage-step {
+            text-align: center;
+            padding: 25px;
+            background: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--morado-zensia);
+            color: var(--blanco);
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Trust Section */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .trust-badge strong {
+            display: block;
+            color: var(--morado-zensia);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            max-width: 1000px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--blanco);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background: var(--morado-zensia);
+            color: var(--blanco);
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: var(--rosado-suave);
+        }
+        
+        .check {
+            color: #27AE60;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .cross {
+            color: #E74C3C;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+        
+        .testimonial {
+            background: var(--blanco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--morado-zensia);
+            font-style: normal;
+        }
+        
+        /* Offer Section */
+        .offer-box {
+            background: linear-gradient(135deg, var(--morado-zensia) 0%, #8B3577 100%);
+            color: var(--blanco);
+            padding: 50px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .offer-details {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .offer-details li {
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        /* FAQ Section */
+        .faq-list {
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        
+        .faq-item {
+            background: var(--blanco);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+        
+        .faq-item h3 {
+            color: var(--morado-zensia);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        
+        .faq-item p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--negro);
+            color: var(--blanco);
+            padding: 50px 20px 30px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: var(--rosado-suave);
+            margin-bottom: 15px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: var(--blanco);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .footer-section a:hover {
+            color: var(--rosado-suave);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .compliance-note {
+            background: #FFF3CD;
+            border: 1px solid #FFECB5;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #856404;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subheadline {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .price {
+                font-size: 2.2rem;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tu ritual diario de bienestar inteligente</h1>
+            <p class="hero-subheadline">Zensia combina colágeno, antioxidantes y prebiótico en una bebida funcional sin azúcar añadida</p>
+            
+            <ul class="benefits-list">
+                <li>Soporte de colágeno</li>
+                <li>Acción antioxidante</li>
+                <li>Apoyo a la respuesta inflamatoria</li>
+                <li>Con prebiótico</li>
+                <li>Sin azúcar añadida</li>
+            </ul>
+            
+            <div class="cta-container">
+                <a href="#comprar" class="btn btn-primary">Comprar ahora</a>
+                <a href="#que-es" class="btn btn-secondary">Quiero saber más</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AEO: Qué es Zensia -->
+    <section id="que-es">
+        <div class="container">
+            <h2>¿Qué es Zensia?</h2>
+            <div class="aeo-answer">
+                <p>Zensia es una bebida funcional en polvo diseñada para apoyar tu bienestar diario de forma práctica e inteligente. Combina colágeno hidrolizado, antioxidantes naturales como acai y camu-camu, ginseng e inulina como prebiótico. Su fórmula sin azúcar añadida ofrece soporte de colágeno, acción antioxidante y apoyo a tu respuesta inflamatoria natural, integrándose fácilmente en tu rutina para cuidarte desde dentro.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Beneficios del Producto -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Beneficios que hacen la diferencia</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Soporte de colágeno</h3>
+                    <p>El colágeno hidrolizado aporta aminoácidos que tu cuerpo puede utilizar para mantener la estructura natural de tu piel, articulaciones y tejidos conectivos.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Acción antioxidante</h3>
+                    <p>El acai y el camu-camu son fuentes naturales de antioxidantes que ayudan a proteger tus células del estrés oxidativo diario.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Apoyo a la respuesta inflamatoria</h3>
+                    <p>Los ingredientes naturales de Zensia contribuyen a que tu cuerpo maneje su respuesta inflamatoria de forma equilibrada y natural.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Prebiótico para bienestar digestivo</h3>
+                    <p>La inulina es un prebiótico que alimenta las bacterias benéficas de tu sistema digestivo, apoyando tu bienestar intestinal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ingredientes y Ciencia -->
+    <section>
+        <div class="container">
+            <h2>Ingredientes reales, ciencia accesible</h2>
+            <div class="ingredients-list">
+                <div class="ingredient-item">
+                    <h3>Colágeno hidrolizado</h3>
+                    <p>Proteína procesada en fragmentos pequeños para facilitar su absorción. Aporta aminoácidos que forman parte natural de tu piel, cabello y articulaciones.</p>
+                </div>
+                
+                <div class="ingredient-item">
+                    <h3>Acai</h3>
+                    <p>Superfruto amazónico rico en antocianinas, potentes antioxidantes que protegen las células del daño oxidativo y aportan ese tono morado característico.</p>
+                </div>
+                
+                <div class="ingredient-item">
+                    <h3>Camu-camu</h3>
+                    <p>Fruta peruana con una de las concentraciones más altas de vitamina C natural, reforzando la acción antioxidante y el soporte al sistema inmune.</p>
+                </div>
+                
+                <div class="ingredient-item">
+                    <h3>Ginseng</h3>
+                    <p>Adaptógeno tradicional que ayuda al cuerpo a manejar el estrés físico y mental, aportando vitalidad sostenida sin estimulantes artificiales.</p>
+                </div>
+                
+                <div class="ingredient-item">
+                    <h3>Inulina (prebiótico)</h3>
+                    <p>Fibra soluble que sirve de alimento para las bacterias benéficas de tu intestino, favoreciendo un microbioma saludable y una digestión equilibrada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cómo usar -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Cómo integrar Zensia en tu día</h2>
+            <div class="usage-steps">
+                <div class="usage-step">
+                    <div class="step-number">1</div>
+                    <h3>Un stick al día</h3>
+                    <p>Simplicidad y consistencia para crear tu hábito</p>
+                </div>
+                
+                <div class="usage-step">
+                    <div class="step-number">2</div>
+                    <h3>Mezcla con agua fría</h3>
+                    <p>250ml de agua, agita y listo</p>
+                </div>
+                
+                <div class="usage-step">
+                    <div class="step-number">3</div>
+                    <h3>Versátil y adaptable</h3>
+                    <p>Combínalo con jugos, smoothies o mocktails</p>
+                </div>
+                
+                <div class="usage-step">
+                    <div class="step-number">4</div>
+                    <h3>Tu momento ideal</h3>
+                    <p>Por la mañana o por la tarde, cuando mejor te funcione</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Beneficios visibles -->
+    <section>
+        <div class="container">
+            <h2>Lo que nuestras usuarias valoran</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Piel radiante</h3>
+                    <p>El soporte de colágeno y los antioxidantes trabajan desde dentro para ayudar a mantener la elasticidad y luminosidad natural de tu piel.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Bienestar general</h3>
+                    <p>Una fórmula integral que cuida múltiples aspectos de tu salud sin complicaciones ni productos separados.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Energía sin azúcar</h3>
+                    <p>Vitalidad natural sin los picos y caídas del azúcar, para mantenerte activa todo el día.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Rutina simple</h3>
+                    <p>Un solo stick al día: fácil de recordar, fácil de integrar, fácil de llevar contigo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Confianza -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Transparencia y confianza</h2>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <strong>Registro sanitario</strong>
+                    <p>Cumplimos con todas las normativas colombianas</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <strong>Hecho en Colombia</strong>
+                    <p>Fabricado localmente con estándares de calidad</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <strong>Ingredientes reales</strong>
+                    <p>Lo que ves es lo que obtienes, sin sorpresas</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <strong>Sede física</strong>
+                    <p>Empresa establecida con atención personalizada</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <strong>Sin azúcar añadida</strong>
+                    <p>Dulzor natural sin comprometer tu salud</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <strong>Total transparencia</strong>
+                    <p>Información clara sobre cada ingrediente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tabla comparativa -->
+    <section>
+        <div class="container">
+            <h2>¿Por qué elegir Zensia?</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Zensia</th>
+                            <th>Bebidas energéticas</th>
+                            <th>Multivitamínicos</th>
+                            <th>Bebidas con azúcar</th>
+                            <th>Colágeno tradicional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Colágeno hidrolizado</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Antioxidantes naturales</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td>Sintéticos</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td>Sin azúcar añadida</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Prebiótico incluido</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                            <td class="cross">✗</td>
+                        </tr>
+                        <tr>
+                            <td>Sabor agradable</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td class="cross">✗</td>
+                            <td class="check">✓</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Fácil integración</td>
+                            <td class="check">✓</td>
+                            <td class="check">✓</td>
+                            <td>Pastillas</td>
+                            <td class="check">✓</td>
+                            <td>Polvos simples</td>
+                        </tr>
+                        <tr>
+                            <td>Formato práctico</td>
+                            <td>Sticks portátiles</td>
+                            <td>Latas</td>
+                            <td>Frascos</td>
+                            <td>Botellas</td>
+                            <td>Bolsas grandes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonios -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Lo que dicen nuestras usuarias</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Me encanta que sea tan fácil de preparar. Lo llevo al trabajo y lo tomo en mi break de la tarde. Me siento más activa sin necesitar café extra."</p>
+                    <p class="testimonial-author">— Carolina, 32 años</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Por fin encontré algo que realmente encaja en mi rutina. No tengo que acordarme de mil cosas diferentes, solo mi Zensia diario y listo."</p>
+                    <p class="testimonial-author">— Valentina, 28 años</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Lo que más valoro es que no tiene ese sabor artificial que tienen otras bebidas. Se siente natural y me gusta saber exactamente qué estoy tomando."</p>
+                    <p class="testimonial-author">— Andrea, 35 años</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Empecé a tomarlo por el colágeno, pero me quedé por todo lo demás. Es como mi ritual de autocuidado diario en un solo vaso."</p>
+                    <p class="testimonial-author">— Sofía, 41 años</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Soy muy exigente con lo que consumo y Zensia cumplió mis expectativas. Los ingredientes son reales y la marca es transparente."</p>
+                    <p class="testimonial-author">— Mariana, 30 años</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Me gusta que pueda mezclarlo con mi smoothie de la mañana. Es versátil y no se siente como tomar un suplemento más."</p>
+                    <p class="testimonial-author">— Daniela, 26 años</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Oferta Comercial -->
+    <section id="comprar">
+        <div class="container">
+            <h2>Comienza tu ritual Zensia</h2>
+            <div class="offer-box">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 15px;">Caja de 30 sticks</h3>
+                <div class="price">$89.900</div>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">Un mes completo de bienestar</p>
+                
+                <ul class="offer-details">
+                    <li>✓ 30 sticks individuales</li>
+                    <li>✓ Envío a toda Colombia</li>
+                    <li>✓ Empaque práctico y portátil</li>
+                    <li>✓ Fácil de llevar contigo</li>
+                    <li>✓ Garantía de satisfacción</li>
+                </ul>
+                
+                <a href="#contacto" class="btn btn-primary" style="margin-top: 25px;">Hacer mi pedido</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ AEO -->
+    <section class="section-alt">
+        <div class="container">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>¿Qué beneficios tiene Zensia?</h3>
+                    <p>Zensia ofrece soporte de colágeno para la piel, acción antioxidante gracias al acai y camu-camu, apoyo a la respuesta inflamatoria natural del cuerpo, y prebiótico para el bienestar digestivo.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Zensia tiene azúcar?</h3>
+                    <p>No, Zensia está libre de azúcar añadida.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Qué contiene Zensia?</h3>
+                    <p>Zensia contiene colágeno hidrolizado, acai, camu-camu, ginseng e inulina como prebiótico. Todos ingredientes naturales y funcionales.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Cómo se toma Zensia?</h3>
+                    <p>Mezcla un stick al día con 250ml de agua fría. También puedes combinarlo con jugos, smoothies o mocktails según tu preferencia.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Zensia sirve para la piel?</h3>
+                    <p>Zensia contiene colágeno hidrolizado y antioxidantes que ofrecen soporte estructural desde dentro. El colágeno es una proteína que forma parte natural de la piel, mientras que los antioxidantes ayudan a proteger las células del estrés oxidativo.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Zensia tiene efectos secundarios?</h3>
+                    <p>Zensia está formulado con ingredientes naturales. Como con cualquier suplemento, si tienes alguna condición médica o estás embarazada, consulta con tu profesional de salud antes de consumirlo.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Zensia es natural?</h3>
+                    <p>Sí, Zensia utiliza ingredientes de origen natural como colágeno hidrolizado, acai, camu-camu, ginseng e inulina, sin azúcar añadida ni ingredientes artificiales innecesarios.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Zensia reemplaza comidas?</h3>
+                    <p>No, Zensia es un complemento funcional, no un reemplazo de comidas. Está diseñado para integrarse en tu rutina junto con una alimentación equilibrada.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Para quién es Zensia?</h3>
+                    <p>Zensia es ideal para personas que buscan apoyar su bienestar de forma práctica e inteligente, especialmente mujeres que valoran el autocuidado, ingredientes naturales y rutinas simples.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>¿Dónde comprar Zensia?</h3>
+                    <p>Puedes comprar Zensia a través de nuestra página web con envío a toda Colombia, o contactarnos directamente por WhatsApp para atención personalizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Compliance Note -->
+    <div class="compliance-note">
+        <strong>Nota importante:</strong> Este producto no reemplaza una alimentación equilibrada ni recomendaciones profesionales. Los beneficios mencionados son propios de los ingredientes y no constituyen promesas médicas.
+    </div>
+    
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zensia</h3>
+                    <p>Tu ritual diario de bienestar inteligente.</p>
+                    <p style="margin-top: 15px;">Fabricado en Colombia con los más altos estándares de calidad.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 hola@zensia.com.co</p>
+                    <p>📱 WhatsApp: +57 300 123 4567</p>
+                    <p>📍 Bogotá, Colombia</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Política de privacidad</a>
+                    <a href="#">Política de envíos</a>
+                    <a href="#">Política de devoluciones</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Zensia. Todos los derechos reservados. | Registro sanitario vigente | Producto complemento, no medicamento.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+    
