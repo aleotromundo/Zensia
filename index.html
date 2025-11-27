@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zensia | Bienestar Diario</title>
   <meta name="description" content="Zensia es una bebida funcional en polvo para tu bienestar diario. Ingredientes naturales como colágeno, açaí y camu camu." />
-  
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -55,11 +55,12 @@
   <header id="header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-        <div class="flex-shrink-0 flex items-center">
-          <a href="#inicio" class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">
-            Zensia
-          </a>
-        </div>
+<div class="flex-shrink-0 flex items-center">
+  <a href="#inicio" class="flex items-center gap-3">
+    <img src="logo.png" alt="Zensia Logo" class="h-10 w-10" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
+    <span class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">Zensia</span>
+  </a>
+</div>
 
         <!-- Desktop Menu -->
         <nav class="hidden md:flex space-x-8">
@@ -727,12 +728,15 @@
   <footer class="bg-zensia-black text-white py-12 border-t border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-8 md:mb-0 text-center md:text-left">
-          <h2 class="font-serif text-3xl font-bold text-zensia-pink mb-2">Zensia</h2>
-          <p class="text-gray-400 text-sm max-w-xs">
-            Nutrición funcional para el bienestar diario.
-          </p>
-        </div>
+<div class="mb-8 md:mb-0 text-center md:text-left">
+  <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+    <img src="logo.png" alt="Zensia Logo" class="h-8 w-8" style="filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);" />
+    <h2 class="font-serif text-3xl font-bold text-zensia-pink">Zensia</h2>
+  </div>
+  <p class="text-gray-400 text-sm max-w-xs">
+    Nutrición funcional para el bienestar diario.
+  </p>
+</div>
         <nav class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
           <a href="#inicio" class="text-sm text-gray-300 hover:text-zensia-pink transition-colors">Inicio</a>
           <a href="#que-es" class="text-sm text-gray-300 hover:text-zensia-pink transition-colors">Qué es Zensia</a>
