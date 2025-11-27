@@ -274,6 +274,40 @@
     html.dark #inicio p.text-gray-700 {
       color: rgb(55, 65, 81) !important;
     }
+/* Floating particles */
+    .particle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #FFD700, #FFA500);
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      z-index: 1;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      animation: float-up linear infinite;
+    }
+    
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 0.6;
+        transform: translateY(-50vh) translateX(var(--drift)) scale(1);
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100vh) translateX(var(--drift)) scale(0.5);
+        opacity: 0;
+      }
+    }
   
 </style>
 </head>
@@ -1139,6 +1173,47 @@
         moonIcon.classList.add('hidden');
       }
     });
+// Floating Particles
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      
+      // Random horizontal position
+      const startX = Math.random() * window.innerWidth;
+      particle.style.left = startX + 'px';
+      particle.style.bottom = '-10px';
+      
+      // Random animation duration (slower = more elegant)
+      const duration = 8 + Math.random() * 6; // 8-14 seconds
+      particle.style.animationDuration = duration + 's';
+      
+      // Random horizontal drift
+      const drift = (Math.random() - 0.5) * 100; // -50px to +50px
+      particle.style.setProperty('--drift', drift + 'px');
+      
+      // Random delay
+      particle.style.animationDelay = Math.random() * 2 + 's';
+      
+      // Random size variation
+      const size = 6 + Math.random() * 6; // 6-12px
+      particle.style.width = size + 'px';
+      particle.style.height = size + 'px';
+      
+      document.body.appendChild(particle);
+      
+      // Remove particle after animation
+      setTimeout(() => {
+        particle.remove();
+      }, (duration + 2) * 1000);
+    }
+    
+    // Create particles periodically
+    setInterval(createParticle, 400); // New particle every 400ms
+    
+    // Create initial batch
+    for (let i = 0; i < 10; i++) {
+      setTimeout(createParticle, i * 200);
+    }
   </script>
 </body>
 </html>
