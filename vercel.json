@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/imagenes/(.*)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "image/webp"
+        }
+      ]
+    }
+  ]
+}
