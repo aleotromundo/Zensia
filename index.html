@@ -3,9 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zensia | Bienestar Diario</title>
-  <meta name="description" content="Zensia es una bebida funcional en polvo para tu bienestar diario. Ingredientes naturales como colágeno, açaí y camu camu." />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Zensia - Bebida Funcional con Colágeno | Bienestar Diario Natural</title>
+  <meta name="title" content="Zensia - Bebida Funcional con Colágeno | Bienestar Diario Natural" />
+  <meta name="description" content="Zensia: bebida funcional en polvo con colágeno hidrolizado, açaí, camu camu y adaptógenos. Energía natural, belleza y equilibrio para la mujer moderna. Sin azúcar añadida." />
+  <meta name="keywords" content="zensia, bebida funcional, colágeno hidrolizado, açaí, camu camu, bienestar mujer, superalimentos, adaptógenos, sin azúcar, nutrición funcional, belleza natural, energía natural, curcuma, ginseng, inulina, stevia" />
+  <meta name="author" content="Zensia" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit-after" content="7 days" />
+  
+  <!-- Canonical URL - REEMPLAZA CON TU DOMINIO REAL -->
+  <link rel="canonical" href="https://zensia-omega.vercel.app/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zensia-omega.vercel.app/" />
+  <meta property="og:title" content="Zensia - Bebida Funcional con Colágeno | Bienestar Diario Natural" />
+  <meta property="og:description" content="Bebida funcional en polvo con colágeno, açaí y superalimentos. Energía, belleza y equilibrio en un solo paso." />
+  <meta property="og:image" content="https://zensia-omega.vercel.app/Imagenes/hero.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Zensia" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://zensia-omega.vercel.app/" />
+  <meta name="twitter:title" content="Zensia - Bebida Funcional con Colágeno | Bienestar Diario Natural" />
+  <meta name="twitter:description" content="Bebida funcional en polvo con colágeno, açaí y superalimentos. Energía, belleza y equilibrio en un solo paso." />
+  <meta name="twitter:image" content="https://zensia-omega.vercel.app/Imagenes/hero.webp" />
+  
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -48,7 +86,23 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #501b47;
     }
-/* Dark mode styles */
+
+    /* Logo filter for light mode */
+    .logo-filter {
+      filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);
+    }
+
+    /* Logo filter for dark mode */
+    html.dark .logo-filter {
+      filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);
+    }
+
+    /* Check icons and heart lighter in dark mode */
+    html.dark .check-icon {
+      stroke: #E5BCD3 !important;
+    }
+
+    /* Dark mode styles */
     html.dark {
       background-color: #1a1a1a;
     }
@@ -185,7 +239,8 @@
     html.dark .theme-toggle-circle {
       left: 33px;
     }
-/* Hero section */
+
+    /* Hero section */
     html.dark #inicio h1 span.text-black {
       color: #f5f5f5 !important;
     }
@@ -256,7 +311,8 @@
     html.dark #contacto p {
       color: #d1d1d1 !important;
     }
-/* Hero section - mantener colores originales */
+
+    /* Hero section - mantener colores originales */
     html.dark #inicio h1,
     html.dark #inicio h1 span,
     html.dark #inicio p {
@@ -274,7 +330,8 @@
     html.dark #inicio p.text-gray-700 {
       color: rgb(55, 65, 81) !important;
     }
-/* Floating particles */
+
+    /* Floating particles */
     .particle {
       position: fixed;
       width: 8px;
@@ -308,23 +365,7 @@
         opacity: 0;
       }
     }
-  /* Logo filter for light mode */
-.logo-filter {
-  filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);
-}
-
-/* Logo filter for dark mode */
-html.dark .logo-filter {
-  filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);
-}
-/* Check icons lighter in dark mode */
-html.dark .check-icon {
-  stroke: #E5BCD3 !important;
-}
-html.dark .check-icon {
-  stroke: #E5BCD3 !important;
-}
-</style>
+  </style>
 </head>
 <body class="bg-white text-zensia-black antialiased">
   <!-- Header -->
@@ -1230,5 +1271,47 @@ html.dark .check-icon {
       setTimeout(createParticle, i * 200);
     }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Zensia",
+  "description": "Bebida funcional en polvo formulada con ingredientes naturales para el bienestar diario de la mujer moderna",
+  "brand": {
+    "@type": "Brand",
+    "name": "Zensia"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "COP"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zensia",
+  "url": "https://tu-dominio.vercel.app",
+  "logo": "https://tu-dominio.vercel.app/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+57-322-3769698",
+    "contactType": "Customer Service",
+    "availableLanguage": "Spanish"
+  },
+  "sameAs": [
+    "https://wa.me/573223769698"
+  ]
+}
+</script>
 </body>
 </html>
