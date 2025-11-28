@@ -308,7 +308,15 @@
         opacity: 0;
       }
     }
-  
+  /* Logo filter for light mode */
+.logo-filter {
+  filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);
+}
+
+/* Logo filter for dark mode */
+html.dark .logo-filter {
+  filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);
+}
 </style>
 </head>
 <body class="bg-white text-zensia-black antialiased">
@@ -318,7 +326,7 @@
       <div class="flex justify-between items-center h-20">
 <div class="flex-shrink-0 flex items-center">
   <a href="#inicio" class="flex items-center gap-3">
-    <img src="logo.png" alt="Zensia Logo" class="h-10 w-10" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
+    <img src="logo.png" alt="Zensia Logo" class="h-10 w-10 logo-filter" />
     <span class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">Zensia</span>
   </a>
 </div>
