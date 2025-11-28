@@ -6,6 +6,7 @@
   <title>Zensia | Bienestar Diario</title>
   <meta name="description" content="Zensia es una bebida funcional en polvo para tu bienestar diario. Ingredientes naturales como colágeno, açaí y camu camu." />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,11 +30,11 @@
       },
     }
   </script>
-
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Custom Scrollbar -->
+  
+  <!-- Custom styles (DEBE QUEDAR AQUÍ para que Tailwind CDN lo aplique correctamente) -->
   <style>
     ::-webkit-scrollbar {
       width: 10px;
@@ -48,112 +49,81 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #501b47;
     }
-/* Dark mode styles */
+    /* Dark mode styles */
     html.dark {
       background-color: #1a1a1a;
     }
-    
     html.dark body {
       background-color: #1a1a1a;
       color: #f5f5f5;
     }
-    
-    /* Backgrounds */
     html.dark .bg-white {
       background-color: #2d2d2d !important;
     }
-    
     html.dark .bg-gray-50 {
       background-color: #252525 !important;
     }
-    
     html.dark .bg-zensia-pink\/30 {
       background-color: rgba(109, 37, 97, 0.2) !important;
     }
-    
     html.dark .bg-zensia-pink\/20 {
       background-color: rgba(109, 37, 97, 0.15) !important;
     }
-    
     html.dark header {
       background-color: rgba(45, 45, 45, 0.95) !important;
     }
-    
     html.dark #mobile-menu {
       background-color: #2d2d2d !important;
     }
-    
-    /* Text colors */
     html.dark .text-gray-700,
     html.dark .text-gray-800 {
       color: #d1d1d1 !important;
     }
-    
     html.dark .text-gray-900 {
       color: #f5f5f5 !important;
     }
-    
     html.dark .text-gray-600 {
       color: #b0b0b0 !important;
     }
-    
     html.dark .text-gray-500 {
       color: #9a9a9a !important;
     }
-    
     html.dark .text-zensia-black {
       color: #f5f5f5 !important;
     }
-    
-    /* Borders */
     html.dark .border-gray-100 {
       border-color: #404040 !important;
     }
-    
     html.dark .border-gray-200 {
       border-color: #4a4a4a !important;
     }
-    
     html.dark .border-gray-800 {
       border-color: #505050 !important;
     }
-    
     html.dark .border-zensia-pink\/30 {
       border-color: rgba(109, 37, 97, 0.4) !important;
     }
-    
-    /* Shadows */
     html.dark .shadow-sm,
     html.dark .shadow-lg,
     html.dark .shadow-xl,
     html.dark .shadow-2xl {
       box-shadow: 0 4px 20px rgba(109, 37, 97, 0.3) !important;
     }
-    
-    /* Tables */
     html.dark table thead {
       background-color: #333 !important;
     }
-    
     html.dark table tbody tr:hover {
       background-color: rgba(109, 37, 97, 0.1) !important;
     }
-    
     html.dark .divide-y > :not([hidden]) ~ :not([hidden]) {
       border-color: #404040 !important;
     }
-    
-    /* FAQ */
     html.dark #faq-container .bg-white {
       background-color: #2d2d2d !important;
     }
-    
-    /* Footer stays dark always */
     html.dark footer.bg-zensia-black {
       background-color: #000000 !important;
     }
-
-    /* Theme toggle button */
     .theme-toggle {
       position: relative;
       width: 60px;
@@ -163,7 +133,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    
     .theme-toggle-circle {
       position: absolute;
       top: 3px;
@@ -177,104 +146,74 @@
       align-items: center;
       justify-content: center;
     }
-    
     html.dark .theme-toggle {
       background: #E5BCD3;
     }
-    
     html.dark .theme-toggle-circle {
       left: 33px;
     }
-/* Hero section */
     html.dark #inicio h1 span.text-black {
       color: #f5f5f5 !important;
     }
-    
-    /* Cards and boxes content */
     html.dark .bg-white.p-6 p {
       color: #d1d1d1 !important;
     }
-    
-    /* Lists */
     html.dark ul li span,
     html.dark ul li {
       color: #b0b0b0 !important;
     }
-    
-    /* Ingredient cards */
     html.dark .space-y-6 p.text-lg {
       color: #f5f5f5 !important;
     }
-    
     html.dark .space-y-6 p.text-gray-700 {
       color: #d1d1d1 !important;
     }
-    
-    /* Buttons text */
     html.dark .text-zensia-purple {
       color: #E5BCD3 !important;
     }
-    
-    /* Keep these purple always */
     html.dark h2.text-zensia-purple,
     html.dark h3.text-zensia-purple,
     html.dark h1.text-zensia-purple {
       color: #E5BCD3 !important;
     }
-    
     html.dark span.text-zensia-purple {
       color: #E5BCD3 !important;
     }
-    
-    /* Table text */
     html.dark table td {
       color: #d1d1d1 !important;
     }
-    
     html.dark table th {
       color: #b0b0b0 !important;
     }
-    
-    /* Preparation section */
     html.dark #preparacion p {
       color: #b0b0b0 !important;
     }
-    
     html.dark #preparacion h3 {
       color: #f5f5f5 !important;
     }
-    
-    /* Contact section background */
     html.dark #contacto .bg-zensia-pink\/20 {
       background-color: rgba(109, 37, 97, 0.2) !important;
     }
-    
     html.dark #contacto h2 {
       color: #f5f5f5 !important;
     }
-    
     html.dark #contacto p {
       color: #d1d1d1 !important;
     }
-/* Hero section - mantener colores originales */
     html.dark #inicio h1,
     html.dark #inicio h1 span,
     html.dark #inicio p {
       color: inherit !important;
     }
-    
     html.dark #inicio h1.text-zensia-purple {
       color: #6D2561 !important;
     }
-    
     html.dark #inicio h1 span.text-black {
       color: #000000 !important;
     }
-    
     html.dark #inicio p.text-gray-700 {
       color: rgb(55, 65, 81) !important;
     }
-/* Floating particles */
     .particle {
       position: fixed;
       width: 8px;
@@ -287,7 +226,6 @@
       box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
       animation: float-up linear infinite;
     }
-    
     @keyframes float-up {
       0% {
         transform: translateY(0) translateX(0) scale(0);
@@ -308,22 +246,20 @@
         opacity: 0;
       }
     }
-  
-</style>
+  </style>
 </head>
 <body class="bg-white text-zensia-black antialiased">
+
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-<div class="flex-shrink-0 flex items-center">
-  <a href="#inicio" class="flex items-center gap-3">
-    <img src="logo.png" alt="Zensia Logo" class="h-10 w-10" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
-    <span class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">Zensia</span>
-  </a>
-</div>
-
-        <!-- Desktop Menu -->
+        <div class="flex-shrink-0 flex items-center">
+          <a href="#inicio" class="flex items-center gap-3">
+            <img src="logo.png" alt="Zensia Logo" class="h-10 w-10" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
+            <span class="text-3xl font-serif font-bold text-zensia-purple tracking-wide">Zensia</span>
+          </a>
+        </div>
         <nav class="hidden md:flex space-x-8">
           <a href="#inicio" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Inicio</a>
           <a href="#que-es" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Qué es Zensia</a>
@@ -333,7 +269,6 @@
           <a href="#faq" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">FAQ</a>
           <a href="#contacto" class="text-zensia-black hover:text-zensia-purple transition-colors text-sm font-medium tracking-wide">Contacto</a>
         </nav>
-<!-- Theme Toggle Button -->
         <button id="theme-toggle" class="mr-4 focus:outline-none" aria-label="Cambiar tema">
           <div class="theme-toggle">
             <div class="theme-toggle-circle">
@@ -354,9 +289,7 @@
             </div>
           </div>
         </button>
-        <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden text-zensia-purple hover:text-zensia-black focus:outline-none">
-          <!-- Menu Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -365,8 +298,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
         <a href="#inicio" class="block px-3 py-4 text-base font-medium text-zensia-black hover:text-zensia-purple hover:bg-zensia-pink/20 w-full text-center rounded-md">Inicio</a>
@@ -384,11 +315,7 @@
     <!-- Hero -->
     <section id="inicio" class="relative w-full h-screen min-h-[600px] flex items-center justify-center pt-20 overflow-hidden">
       <div class="absolute inset-0 z-0">
-        <img
-          src="imagenes/hero.webp"
-          alt="Mujer feliz disfrutando de bienestar"
-          class="w-full h-full object-cover opacity-30"
-        />
+        <img src="imagenes/hero.webp" alt="Mujer feliz disfrutando de bienestar" class="w-full h-full object-cover opacity-30" />
         <div class="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-zensia-pink/30 mix-blend-multiply"></div>
       </div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
@@ -400,12 +327,8 @@
           Nutrición funcional en polvo diseñada para la mujer moderna. 
           Energía, belleza y equilibrio en un solo paso.
         </p>
-        <a 
-          href="#que-es"
-          class="group inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-zensia-purple hover:bg-[#501b47] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-        >
+        <a href="#que-es" class="group inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full text-white bg-zensia-purple hover:bg-[#501b47] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
           Conoce Zensia
-          <!-- ArrowRight Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -428,7 +351,6 @@
             </p>
             <ul class="space-y-4">
               <li class="flex items-start">
-                <!-- CheckCircle -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D2561" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 mt-1 mr-3 flex-shrink-0">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -436,7 +358,6 @@
                 <span class="text-gray-700">Mezcla exclusiva de superalimentos y adaptógenos.</span>
               </li>
               <li class="flex items-start">
-                <!-- CheckCircle -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D2561" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 mt-1 mr-3 flex-shrink-0">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -444,7 +365,6 @@
                 <span class="text-gray-700">Fácil disolución para un consumo práctico.</span>
               </li>
               <li class="flex items-start">
-                <!-- CheckCircle -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6D2561" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 mt-1 mr-3 flex-shrink-0">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -456,11 +376,7 @@
           <div class="order-1 md:order-2 flex justify-center">
             <div class="relative">
               <div class="absolute -inset-4 bg-zensia-purple/10 rounded-full blur-2xl"></div>
-              <img 
-                src="imagenes/wellness.webp" 
-                alt="Bienestar y equilibrio natural" 
-                class="relative rounded-2xl shadow-xl w-full max-w-md object-cover h-[400px]"
-              />
+              <img src="https://picsum.photos/seed/zensiawellness/500/500" alt="Bienestar y equilibrio natural" class="relative rounded-2xl shadow-xl w-full max-w-md object-cover h-[400px]" />
             </div>
           </div>
         </div>
@@ -470,7 +386,6 @@
     <section class="py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="flex justify-center mb-6">
-          <!-- Heart Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6D2561" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"></path>
           </svg>
@@ -485,10 +400,9 @@
           ritmo de vida, simplificando lo mejor de la naturaleza en un gesto diario de amor propio.
         </p>
         <div class="mt-8 flex justify-center">
-          <!-- Sparkles Icon -->
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E5BCD3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-</svg>
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
         </div>
       </div>
     </section>
@@ -506,7 +420,6 @@
             Navega por nuestros ingredientes principales.
           </p>
         </div>
-
         <div class="flex flex-wrap justify-center gap-3 mb-16">
           <a href="#colageno" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Colágeno Hidrolizado</a>
           <a href="#acai" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Açaí Liofilizado</a>
@@ -516,17 +429,15 @@
           <a href="#inulina" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Inulina</a>
           <a href="#stevia" class="px-4 py-2 bg-white border border-zensia-pinkDark text-zensia-purple rounded-full text-sm font-medium hover:bg-zensia-purple hover:text-white transition-colors">Stevia</a>
         </div>
-
         <div class="space-y-24">
           <!-- Colágeno -->
           <div id="colageno" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/collagen.webp" alt="Colágeno Hidrolizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/collagen/400/300" alt="Colágeno Hidrolizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Colágeno Hidrolizado</h3>
@@ -546,16 +457,14 @@
               </div>
             </div>
           </div>
-
           <!-- Açaí -->
           <div id="acai" class="flex flex-col md:flex-row gap-12 items-center md:flex-row-reverse scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/acai.webp" alt="Açaí Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/acai/400/300" alt="Açaí Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Açaí Liofilizado</h3>
@@ -575,16 +484,14 @@
               </div>
             </div>
           </div>
-
           <!-- Camu Camu -->
           <div id="camucamu" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/camu.webp" alt="Camu Camu Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/camu/400/300" alt="Camu Camu Liofilizado" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Camu Camu Liofilizado</h3>
@@ -604,16 +511,14 @@
               </div>
             </div>
           </div>
-
           <!-- Cúrcuma -->
           <div id="curcuma" class="flex flex-col md:flex-row gap-12 items-center md:flex-row-reverse scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/turmeric.webp" alt="Cúrcuma" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/turmeric/400/300" alt="Cúrcuma" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Cúrcuma</h3>
@@ -633,16 +538,14 @@
               </div>
             </div>
           </div>
-
           <!-- Ginseng -->
           <div id="ginseng" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/ginseng.webp" alt="Ginseng" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/ginseng/400/300" alt="Ginseng" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Ginseng</h3>
@@ -662,16 +565,14 @@
               </div>
             </div>
           </div>
-
           <!-- Inulina -->
           <div id="inulina" class="flex flex-col md:flex-row gap-12 items-center md:flex-row-reverse scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/inulin.webp" alt="Inulina" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/inulin/400/300" alt="Inulina" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Inulina</h3>
@@ -691,16 +592,14 @@
               </div>
             </div>
           </div>
-
           <!-- Stevia -->
           <div id="stevia" class="flex flex-col md:flex-row gap-12 items-center scroll-mt-28">
             <div class="w-full md:w-1/2">
-              <img src="imagenes/stevia.webp" alt="Stevia" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
+              <img src="https://picsum.photos/seed/stevia/400/300" alt="Stevia" class="w-full h-80 object-cover rounded-3xl shadow-lg transform hover:scale-[1.02] transition-transform duration-500">
             </div>
             <div class="w-full md:w-1/2 space-y-6">
               <div class="flex items-center gap-3">
                 <div class="p-2 bg-zensia-pink/40 rounded-full">
-                  <!-- Leaf Icon -->
                   <img src="logo.png" alt="" class="h-5 w-5" style="filter: invert(21%) sepia(47%) saturate(1759%) hue-rotate(281deg) brightness(94%) contrast(89%);" />
                 </div>
                 <h3 class="font-serif text-3xl font-bold text-zensia-purple">Stevia</h3>
@@ -721,8 +620,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Comparison Table -->
         <div class="mt-24 bg-white rounded-2xl shadow-xl overflow-hidden">
           <div class="px-6 py-8 bg-zensia-purple text-white text-center">
             <h3 class="font-serif text-2xl font-bold">Resumen Funcional</h3>
@@ -788,44 +685,40 @@
           Cómo preparar Zensia
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <!-- Step 1 -->
           <div class="flex flex-col items-center group">
             <div class="w-24 h-24 bg-zensia-pinkDark rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:bg-zensia-purple transition-colors duration-300 transform group-hover:-translate-y-2">
-  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M6 2v6a6 6 0 0 0 12 0V2"></path>
-    <path d="M12 14v8"></path>
-    <path d="M8 22h8"></path>
-  </svg>
-</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2v6a6 6 0 0 0 12 0V2"></path>
+                <path d="M12 14v8"></path>
+                <path d="M8 22h8"></path>
+              </svg>
+            </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Sirve</h3>
             <p class="text-gray-600 max-w-xs mx-auto text-lg leading-relaxed">
               Añade 1 stick de Zensia en un vaso con agua o tu smoothie favorito.
             </p>
           </div>
-          <!-- Step 2 -->
           <div class="flex flex-col items-center group">
             <div class="w-24 h-24 bg-zensia-pinkDark rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:bg-zensia-purple transition-colors duration-300 transform group-hover:-translate-y-2">
-  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="3"></circle>
-    <path d="M12 2v3"></path>
-    <path d="M12 19v3"></path>
-    <path d="m4.93 4.93 2.12 2.12"></path>
-    <path d="m16.95 16.95 2.12 2.12"></path>
-    <path d="M2 12h3"></path>
-    <path d="M19 12h3"></path>
-    <path d="m4.93 19.07 2.12-2.12"></path>
-    <path d="m16.95 7.05 2.12-2.12"></path>
-  </svg>
-</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 2v3"></path>
+                <path d="M12 19v3"></path>
+                <path d="m4.93 4.93 2.12 2.12"></path>
+                <path d="m16.95 16.95 2.12 2.12"></path>
+                <path d="M2 12h3"></path>
+                <path d="M19 12h3"></path>
+                <path d="m4.93 19.07 2.12-2.12"></path>
+                <path d="m16.95 7.05 2.12-2.12"></path>
+              </svg>
+            </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">Mezcla</h3>
             <p class="text-gray-600 max-w-xs mx-auto text-lg leading-relaxed">
               Revuelve bien hasta que el polvo se disuelva completamente.
             </p>
           </div>
-          <!-- Step 3 -->
           <div class="flex flex-col items-center group">
             <div class="w-24 h-24 bg-zensia-pinkDark rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:bg-zensia-purple transition-colors duration-300 transform group-hover:-translate-y-2">
-              <!-- Smile Icon -->
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
@@ -862,7 +755,6 @@
             <ul class="space-y-8">
               <li class="flex items-start">
                 <div class="bg-white/10 p-3 rounded-lg mr-4">
-                  <!-- ShieldCheck Icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6D8E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
                     <path d="m9 12 2 2 4-4"></path>
@@ -875,10 +767,9 @@
               </li>
               <li class="flex items-start">
                 <div class="bg-white/10 p-3 rounded-lg mr-4">
-                  <!-- Sparkles Icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6D8E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-</svg>
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
                 </div>
                 <div>
                   <h4 class="text-xl font-bold mb-1">Poder Antioxidante</h4>
@@ -887,10 +778,9 @@
               </li>
               <li class="flex items-start">
                 <div class="bg-white/10 p-3 rounded-lg mr-4">
-                  <!-- HeartPulse Icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6D8E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"></path>
-</svg>
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"></path>
+                  </svg>
                 </div>
                 <div>
                   <h4 class="text-xl font-bold mb-1">Salud Digestiva</h4>
@@ -899,7 +789,6 @@
               </li>
               <li class="flex items-start">
                 <div class="bg-white/10 p-3 rounded-lg mr-4">
-                  <!-- Zap Icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6D8E7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                   </svg>
@@ -913,11 +802,7 @@
           </div>
           <div class="w-full md:w-1/2 relative">
             <div class="absolute inset-0 bg-gradient-to-tr from-zensia-purple/50 to-transparent z-10 rounded-2xl"></div>
-            <img 
-              src="imagenes/happywoman.webp" 
-              alt="Mujer activa y feliz" 
-              class="rounded-2xl shadow-2xl w-full object-cover h-[600px]"
-            />
+            <img src="https://picsum.photos/seed/happywoman/600/800" alt="Mujer activa y feliz" class="rounded-2xl shadow-2xl w-full object-cover h-[600px]" />
             <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-xl z-20 max-w-xs">
               <p class="text-zensia-purple font-serif text-lg font-bold italic">
                 "El bienestar es la base de mi felicidad diaria."
@@ -955,23 +840,13 @@
             Nos encantaría escucharte. Prometemos una respuesta amable y humana.
           </p>
           <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-            <a 
-              href="tel:3223769698"
-              class="flex items-center gap-3 px-8 py-4 bg-white text-zensia-purple border border-zensia-purple rounded-full font-bold hover:bg-zensia-purple hover:text-white transition-all duration-300 shadow-sm"
-            >
-              <!-- Phone Icon -->
+            <a href="tel:3223769698" class="flex items-center gap-3 px-8 py-4 bg-white text-zensia-purple border border-zensia-purple rounded-full font-bold hover:bg-zensia-purple hover:text-white transition-all duration-300 shadow-sm">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
               322 3769698
             </a>
-            <a 
-              href="https://wa.me/573223769698" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20bd5a] transition-all duration-300 shadow-md transform hover:-translate-y-1"
-            >
-              <!-- MessageCircle Icon -->
+            <a href="https://wa.me/573223769698" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-full font-bold hover:bg-[#20bd5a] transition-all duration-300 shadow-md transform hover:-translate-y-1">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
               </svg>
@@ -990,15 +865,15 @@
   <footer class="bg-zensia-black text-white py-12 border-t border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
-<div class="mb-8 md:mb-0 text-center md:text-left">
-  <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
-    <img src="logo.png" alt="Zensia Logo" class="h-8 w-8" style="filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);" />
-    <h2 class="font-serif text-3xl font-bold text-zensia-pink">Zensia</h2>
-  </div>
-  <p class="text-gray-400 text-sm max-w-xs">
-    Nutrición funcional para el bienestar diario.
-  </p>
-</div>
+        <div class="mb-8 md:mb-0 text-center md:text-left">
+          <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+            <img src="logo.png" alt="Zensia Logo" class="h-8 w-8" style="filter: invert(85%) sepia(18%) saturate(1015%) hue-rotate(288deg) brightness(101%) contrast(93%);" />
+            <h2 class="font-serif text-3xl font-bold text-zensia-pink">Zensia</h2>
+          </div>
+          <p class="text-gray-400 text-sm max-w-xs">
+            Nutrición funcional para el bienestar diario.
+          </p>
+        </div>
         <nav class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
           <a href="#inicio" class="text-sm text-gray-300 hover:text-zensia-pink transition-colors">Inicio</a>
           <a href="#que-es" class="text-sm text-gray-300 hover:text-zensia-pink transition-colors">Qué es Zensia</a>
@@ -1030,190 +905,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript Vanilla -->
-  <script>
-    // Mobile Menu Toggle
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      // Toggle menu icon
-      const icon = mobileMenuButton.querySelector('svg');
-      if (mobileMenu.classList.contains('hidden')) {
-        // Show menu icon
-        icon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
-      } else {
-        // Show close icon (X)
-        icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
-      }
-    });
-
-    // FAQ Accordion
-    const faqs = [
-      {
-        question: '¿Qué contiene Zensia?',
-        answer: 'Zensia contiene una mezcla funcional de Colágeno Hidrolizado, Açaí liofilizado, Camu Camu, Cúrcuma, Ginseng, Inulina (prebiótico) y está endulzado naturalmente con Stevia.'
-      },
-      {
-        question: '¿Zensia tiene azúcar?',
-        answer: 'No, Zensia no contiene azúcar añadida. Su sabor dulce proviene exclusivamente de la Stevia, un endulzante de origen natural sin calorías.'
-      },
-      {
-        question: '¿Cómo se prepara Zensia?',
-        answer: 'Es muy simple: disuelve 1 stick (o la medida indicada) en un vaso de agua fría, tibia o en tu smoothie favorito. Revuelve bien hasta disolver y disfruta.'
-      },
-      {
-        question: '¿Para qué sirve el colágeno hidrolizado?',
-        answer: 'El colágeno hidrolizado aporta aminoácidos esenciales que apoyan la estructura y elasticidad de la piel, así como el mantenimiento de otros tejidos conectivos del cuerpo.'
-      },
-      {
-        question: '¿Qué aporta el açaí liofilizado?',
-        answer: 'El açaí es una fuente rica en antioxidantes (antocianinas) que ayudan a combatir el estrés oxidativo celular, además de aportar fibra y energía natural.'
-      },
-      {
-        question: '¿El camu camu es una fuente de vitamina C?',
-        answer: 'Sí, el camu camu es una de las frutas con mayor concentración de Vitamina C natural en el mundo, fundamental para la absorción del colágeno y el sistema inmune.'
-      },
-      {
-        question: '¿Zensia reemplaza comidas?',
-        answer: 'No. Zensia es un complemento nutricional diseñado para acompañar una dieta equilibrada, no para reemplazar ninguna comida principal.'
-      },
-      {
-        question: '¿Zensia es para todos?',
-        answer: 'Zensia está formulado con ingredientes naturales. Sin embargo, mujeres embarazadas, en lactancia o personas con condiciones médicas específicas deben consultar a su médico antes de consumirlo.'
-      },
-      {
-        question: '¿Cómo se toma diariamente?',
-        answer: 'Recomendamos tomarlo una vez al día, preferiblemente en las mañanas para aprovechar el boost de energía natural o a media tarde como una pausa de bienestar.'
-      },
-      {
-        question: '¿Dónde puedo pedir información?',
-        answer: 'Puedes contactarnos directamente vía WhatsApp o llamada al teléfono 322 3769698 para cualquier duda o consulta adicional.'
-      }
-    ];
-
-    const faqContainer = document.getElementById('faq-container');
-    let openIndex = null;
-
-    faqs.forEach((faq, index) => {
-      const faqElement = document.createElement('div');
-      faqElement.className = 'bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden';
-      faqElement.innerHTML = `
-        <button class="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none" data-index="${index}">
-          <span class="text-lg font-medium text-gray-900 pr-4">${faq.question}</span>
-          <span class="text-zensia-purple flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </span>
-        </button>
-        <div class="px-6 transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0" data-content="${index}">
-          <p class="text-gray-600 leading-relaxed py-0 pb-6">${faq.answer}</p>
-        </div>
-      `;
-      faqContainer.appendChild(faqElement);
-    });
-
-    faqContainer.addEventListener('click', (e) => {
-      const button = e.target.closest('button');
-      if (!button) return;
-      const index = parseInt(button.dataset.index);
-      const content = document.querySelector(`[data-content="${index}"]`);
-      const chevron = button.querySelector('.chevron');
-
-      if (openIndex === index) {
-        // Close
-        content.style.maxHeight = '0';
-        content.style.opacity = '0';
-        chevron.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
-        openIndex = null;
-      } else {
-        // Close previous
-        if (openIndex !== null) {
-          const prevContent = document.querySelector(`[data-content="${openIndex}"]`);
-          const prevChevron = document.querySelector(`button[data-index="${openIndex}"] .chevron`);
-          if (prevContent) {
-            prevContent.style.maxHeight = '0';
-            prevContent.style.opacity = '0';
-            prevChevron.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
-          }
-        }
-        // Open current
-        content.style.maxHeight = '500px';
-        content.style.opacity = '1';
-        chevron.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
-        openIndex = index;
-      }
-    });
-// Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
-    
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    
-    if (currentTheme === 'dark') {
-      htmlElement.classList.add('dark');
-      sunIcon.classList.add('hidden');
-      moonIcon.classList.remove('hidden');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      htmlElement.classList.toggle('dark');
-      
-      if (htmlElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-        sunIcon.classList.add('hidden');
-        moonIcon.classList.remove('hidden');
-      } else {
-        localStorage.setItem('theme', 'light');
-        sunIcon.classList.remove('hidden');
-        moonIcon.classList.add('hidden');
-      }
-    });
-// Floating Particles
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      
-      // Random horizontal position
-      const startX = Math.random() * window.innerWidth;
-      particle.style.left = startX + 'px';
-      particle.style.bottom = '-10px';
-      
-      // Random animation duration (slower = more elegant)
-      const duration = 8 + Math.random() * 6; // 8-14 seconds
-      particle.style.animationDuration = duration + 's';
-      
-      // Random horizontal drift
-      const drift = (Math.random() - 0.5) * 100; // -50px to +50px
-      particle.style.setProperty('--drift', drift + 'px');
-      
-      // Random delay
-      particle.style.animationDelay = Math.random() * 2 + 's';
-      
-      // Random size variation
-      const size = 6 + Math.random() * 6; // 6-12px
-      particle.style.width = size + 'px';
-      particle.style.height = size + 'px';
-      
-      document.body.appendChild(particle);
-      
-      // Remove particle after animation
-      setTimeout(() => {
-        particle.remove();
-      }, (duration + 2) * 1000);
-    }
-    
-    // Create particles periodically
-    setInterval(createParticle, 400); // New particle every 400ms
-    
-    // Create initial batch
-    for (let i = 0; i < 10; i++) {
-      setTimeout(createParticle, i * 200);
-    }
-  </script>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
